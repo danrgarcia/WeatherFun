@@ -2,12 +2,14 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn
-from secrets import API_KEY
 import requests
 import time
 import logging
 from citipy import citipy
 import json
+from os import getenv
+
+API_KEY = getenv('API_KEY')
 
 def get_weather_data(coords, time_between=1):
     """ Queries openweather API for data.
